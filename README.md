@@ -1,1 +1,1 @@
-# VelvetInfoProvider
+# VelvetInfoDisplay

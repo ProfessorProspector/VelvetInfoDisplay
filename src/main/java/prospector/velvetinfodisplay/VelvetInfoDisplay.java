@@ -9,7 +9,7 @@ public class VelvetInfoDisplay implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		HudVelvet.addElementAdder(BlockRaytraceElement::new);
-		HudVelvet.addElementAdder(FluidRaytraceElement::new);
+		HudVelvet.addElementAdder(() -> HudVelvet.addElement(new BlockRaytraceElement()));
+		HudVelvet.addElementAdder(() -> HudVelvet.addElement(new FluidRaytraceElement()));
 	}
 }

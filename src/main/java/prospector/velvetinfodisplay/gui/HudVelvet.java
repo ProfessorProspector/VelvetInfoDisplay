@@ -6,8 +6,6 @@ import net.minecraft.client.MinecraftGame;
 import net.minecraft.client.gui.Drawable;
 import net.minecraft.client.render.item.ItemRenderer;
 import net.minecraft.item.ItemStack;
-import prospector.velvetinfodisplay.element.BlockRaytraceElement;
-import prospector.velvetinfodisplay.element.FluidRaytraceElement;
 import prospector.velvetinfodisplay.element.InfoElement;
 
 import java.util.ArrayList;
@@ -80,7 +78,6 @@ public class HudVelvet extends Drawable {
 			}
 		}
 		displayActive = active;
-		clearElements();
 	}
 
 	private boolean isLastVisible(InfoElement element) {

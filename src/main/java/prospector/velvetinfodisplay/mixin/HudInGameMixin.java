@@ -9,8 +9,13 @@ import prospector.velvetinfodisplay.gui.HudVelvet;
 
 @Mixin(HudInGame.class)
 public class HudInGameMixin {
+	public HudVelvet velvet;
+
 	@Inject(at = @At("RETURN"), method = "draw(F)V")
 	public void draw(float elapsedTicks, CallbackInfo info) {
-		new HudVelvet().draw();
+		if (velvet == null) {
+			velvet = new HudVelvet();
+		}
+		velvet.draw();
 	}
 }

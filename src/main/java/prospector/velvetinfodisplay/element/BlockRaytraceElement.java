@@ -26,6 +26,7 @@ public class BlockRaytraceElement extends InfoElement {
 
 	@Override
 	public void pre(MinecraftGame game) {
+		visible = true;
 		HitResult result = game.player.rayTrace(game.playerCapabilities.getReachDistance(), 0, FluidRayTraceMode.NONE);
 		if (result != null && result.type == HitResult.Type.BLOCK) {
 			BlockState state = game.world.getBlockState(result.getBlockPos());

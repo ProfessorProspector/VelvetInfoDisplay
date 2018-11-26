@@ -15,8 +15,13 @@ public class HudVelvet extends Drawable {
 	public static int x = 5;
 	public static int y = 5;
 	public MinecraftGame game = MinecraftGame.getInstance();
+	private static List<Runnable> adders = new ArrayList<>();
 	private static List<InfoElement> elements = new ArrayList<>();
 	public boolean displayActive = false;
+
+	public static void addElementAdder(Runnable elementAdder) {
+		adders.add(elementAdder);
+	}
 
 	public static void addElement(InfoElement element) {
 		elements.add(element);
@@ -26,7 +31,7 @@ public class HudVelvet extends Drawable {
 		elements.remove(element);
 	}
 
-	public static void clearElements() {
+	private static void clearElements() {
 		elements.clear();
 	}
 
@@ -35,6 +40,9 @@ public class HudVelvet extends Drawable {
 	}
 
 	public void draw() {
+		for (Runnable adder : adders) {
+			adder.run();
+		}
 		int backgroundColor = 0xFFFFFFFF;
 		x = 10;
 		y = 10;
@@ -78,6 +86,7 @@ public class HudVelvet extends Drawable {
 			}
 		}
 		displayActive = active;
+		clearElements();
 	}
 
 	private boolean isLastVisible(InfoElement element) {

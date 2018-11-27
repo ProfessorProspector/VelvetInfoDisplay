@@ -11,7 +11,7 @@ import prospector.velvetinfodisplay.element.InfoElement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HudVelvet extends Drawable {
+public class VelvetHud extends Drawable {
 	public static int x = 5;
 	public static int y = 5;
 	public MinecraftGame game = MinecraftGame.getInstance();

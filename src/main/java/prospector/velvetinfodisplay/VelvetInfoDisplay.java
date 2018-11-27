@@ -3,13 +3,13 @@ package prospector.velvetinfodisplay;
 import net.fabricmc.api.ModInitializer;
 import prospector.velvetinfodisplay.element.BlockRaytraceElement;
 import prospector.velvetinfodisplay.element.FluidRaytraceElement;
-import prospector.velvetinfodisplay.gui.HudVelvet;
+import prospector.velvetinfodisplay.gui.VelvetHud;
 
 public class VelvetInfoDisplay implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		HudVelvet.addElementAdder(() -> HudVelvet.addElement(new BlockRaytraceElement()));
-		HudVelvet.addElementAdder(() -> HudVelvet.addElement(new FluidRaytraceElement()));
+		VelvetHud.addElementAdder(() -> VelvetHud.addElement(new BlockRaytraceElement()));
+		VelvetHud.addElementAdder(() -> VelvetHud.addElement(new FluidRaytraceElement()));
 	}
 }

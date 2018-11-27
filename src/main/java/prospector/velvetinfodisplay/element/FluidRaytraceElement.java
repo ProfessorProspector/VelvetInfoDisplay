@@ -1,7 +1,7 @@
 package prospector.velvetinfodisplay.element;
 
-import net.minecraft.block.BlockFluid;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.FluidBlock;
 import net.minecraft.client.MinecraftGame;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
@@ -9,11 +9,11 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.HitResult;
 import net.minecraft.world.FluidRayTraceMode;
-import prospector.velvetinfodisplay.gui.HudVelvet;
+import prospector.velvetinfodisplay.gui.VelvetHud;
 
 public class FluidRaytraceElement extends InfoElement {
 	public String name = "";
-	public ItemStack stack = ItemStack.AIR;
+	public ItemStack stack = ItemStack.EMPTY;
 	public int width;
 	public boolean visible = true;
 
@@ -37,7 +37,7 @@ public class FluidRaytraceElement extends InfoElement {
 				stack = item.getDefaultStack();
 				BlockState blockState = fluidState.getBlockState();
 				name = blockState.getBlock().getTextComponent().getText();
-				if (blockState.getBlock() instanceof BlockFluid && blockState.get(BlockFluid.field_11278) == 0) {
+				if (blockState.getBlock() instanceof FluidBlock && blockState.get(FluidBlock.field_11278) == 0) {
 					name = name + " (Source)";
 				}
 				int textWidth = game.fontRenderer.getStringWidth(name) + (stack.isEmpty() ? 0 : 20);
@@ -57,7 +57,7 @@ public class FluidRaytraceElement extends InfoElement {
 	}
 
 	@Override
-	public void draw(int x, int y, HudVelvet hud) {
+	public void draw(int x, int y, VelvetHud hud) {
 		hud.renderItemStack(stack, x, y + (getHeight() / 2) - 8);
 		hud.game.fontRenderer.drawWithShadow(name, x + 20, y + (getHeight() / 2) - (hud.game.fontRenderer.FONT_HEIGHT / 2), 0xFFFFFFFF);
 	}

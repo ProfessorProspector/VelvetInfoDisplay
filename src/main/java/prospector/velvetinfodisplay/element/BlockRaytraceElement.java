@@ -6,11 +6,11 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.HitResult;
 import net.minecraft.world.FluidRayTraceMode;
-import prospector.velvetinfodisplay.gui.HudVelvet;
+import prospector.velvetinfodisplay.gui.VelvetHud;
 
 public class BlockRaytraceElement extends InfoElement {
 	public String name = "";
-	public ItemStack stack = ItemStack.AIR;
+	public ItemStack stack = ItemStack.EMPTY;
 	public int width;
 	public boolean visible = true;
 
@@ -49,7 +49,7 @@ public class BlockRaytraceElement extends InfoElement {
 	}
 
 	@Override
-	public void draw(int x, int y, HudVelvet hud) {
+	public void draw(int x, int y, VelvetHud hud) {
 		hud.renderItemStack(stack, x, y);
 		hud.game.fontRenderer.drawWithShadow(name, x + 20, y + (getHeight() / 2) - (hud.game.fontRenderer.FONT_HEIGHT / 2), 0xFFFFFFFF);
 	}

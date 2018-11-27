@@ -1,7 +1,7 @@
 package prospector.velvetinfodisplay.element;
 
 import net.minecraft.client.MinecraftGame;
-import prospector.velvetinfodisplay.gui.HudVelvet;
+import prospector.velvetinfodisplay.gui.VelvetHud;
 
 public abstract class InfoElement {
 	public abstract int getWidth();
@@ -10,7 +10,7 @@ public abstract class InfoElement {
 
 	public abstract void pre(MinecraftGame game);
 
-	public abstract void draw(int x, int y, HudVelvet hud);
+	public abstract void draw(int x, int y, VelvetHud hud);
 
 	public boolean isVisible() {
 		return true;

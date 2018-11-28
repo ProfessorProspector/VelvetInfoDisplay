@@ -3,7 +3,7 @@
   "package": "prospector.velvetinfodisplay.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "HudInGameMixin"
+    "InGameHudMixin"
   ],
   "injectors": {
     "defaultRequire": 1

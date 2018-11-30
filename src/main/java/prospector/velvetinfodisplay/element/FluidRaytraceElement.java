@@ -2,7 +2,7 @@ package prospector.velvetinfodisplay.element;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FluidBlock;
-import net.minecraft.client.MinecraftGame;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.Item;
@@ -28,10 +28,10 @@ public class FluidRaytraceElement extends InfoElement {
 	}
 
 	@Override
-	public void pre(MinecraftGame game) {
-		HitResult result = game.player.rayTrace(game.playerCapabilities.getReachDistance(), 0, FluidRayTraceMode.ALWAYS);
+	public void pre(MinecraftClient client) {
+		HitResult result = client.player.rayTrace(client.playerCapabilities.getReachDistance(), 0, FluidRayTraceMode.ALWAYS);
 		if (result != null && result.type == HitResult.Type.BLOCK) {
-			FluidState fluidState = game.world.getFluidState(result.getBlockPos());
+			FluidState fluidState = client.world.getFluidState(result.getBlockPos());
 			if (fluidState.getFluid() != Fluids.EMPTY) {
 				Item item = fluidState.getFluid().getBucketItem();
 				stack = item.getDefaultStack();
@@ -40,7 +40,7 @@ public class FluidRaytraceElement extends InfoElement {
 				if (blockState.getBlock() instanceof FluidBlock && blockState.get(FluidBlock.field_11278) == 0) {
 					name = name + " (Source)";
 				}
-				int textWidth = game.fontRenderer.getStringWidth(name) + (stack.isEmpty() ? 0 : 20);
+				int textWidth = client.fontRenderer.getStringWidth(name) + (stack.isEmpty() ? 0 : 20);
 				if (width < textWidth) {
 					width = textWidth;
 				}
@@ -59,6 +59,6 @@ public class FluidRaytraceElement extends InfoElement {
 	@Override
 	public void draw(int x, int y, VelvetHud hud) {
 		hud.renderItemStack(stack, x, y + (getHeight() / 2) - 8);
-		hud.game.fontRenderer.drawWithShadow(name, x + 20, y + (getHeight() / 2) - (hud.game.fontRenderer.FONT_HEIGHT / 2), 0xFFFFFFFF);
+		hud.client.fontRenderer.drawWithShadow(name, x + 20, y + (getHeight() / 2) - (hud.client.fontRenderer.FONT_HEIGHT / 2), 0xFFFFFFFF);
 	}
 }

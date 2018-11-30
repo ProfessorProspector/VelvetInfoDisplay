@@ -2,7 +2,7 @@ package prospector.velvetinfodisplay.gui;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.class_308;
-import net.minecraft.client.MinecraftGame;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.Drawable;
 import net.minecraft.client.render.item.ItemRenderer;
 import net.minecraft.item.ItemStack;
@@ -14,7 +14,7 @@ import java.util.List;
 public class VelvetHud extends Drawable {
 	public static int x = 5;
 	public static int y = 5;
-	public MinecraftGame game = MinecraftGame.getInstance();
+	public MinecraftClient client = MinecraftClient.getInstance();
 	private static List<Runnable> adders = new ArrayList<>();
 	private static List<InfoElement> elements = new ArrayList<>();
 	public boolean displayActive = false;
@@ -60,7 +60,7 @@ public class VelvetHud extends Drawable {
 		width = defaultWidth;
 		height = defaultHeight;
 		for (InfoElement element : elements) {
-			element.pre(game);
+			element.pre(client);
 			if (element.isVisible()) {
 				if (width < element.getWidth() + defaultWidth)
 					width = element.getWidth() + defaultWidth;
@@ -109,7 +109,7 @@ public class VelvetHud extends Drawable {
 			GlStateManager.blendFunc(GlStateManager.SrcBlendFactor.SRC_ALPHA, GlStateManager.DstBlendFactor.ONE_MINUS_SRC_ALPHA);
 			class_308.method_1453();
 
-			ItemRenderer itemRenderer = MinecraftGame.getInstance().getItemRenderer();
+			ItemRenderer itemRenderer = MinecraftClient.getInstance().getItemRenderer();
 			itemRenderer.renderItemAndGlowInGui(stack, x, y);
 
 			GlStateManager.disableLighting();

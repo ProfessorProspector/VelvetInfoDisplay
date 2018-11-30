@@ -1,6 +1,6 @@
 package prospector.velvetinfodisplay.element;
 
-import net.minecraft.client.MinecraftGame;
+import net.minecraft.client.MinecraftClient;
 import prospector.velvetinfodisplay.gui.VelvetHud;
 
 public abstract class InfoElement {
@@ -8,7 +8,7 @@ public abstract class InfoElement {
 
 	public abstract int getHeight();
 
-	public abstract void pre(MinecraftGame game);
+	public abstract void pre(MinecraftClient client);
 
 	public abstract void draw(int x, int y, VelvetHud hud);
 

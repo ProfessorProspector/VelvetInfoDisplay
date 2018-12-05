@@ -29,7 +29,7 @@ public class FluidRaytraceElement extends InfoElement {
 
 	@Override
 	public void pre(MinecraftClient client) {
-		HitResult result = client.player.rayTrace(client.playerCapabilities.getReachDistance(), 0, FluidRayTraceMode.ALWAYS);
+		HitResult result = client.player.rayTrace(client.interactionManager.getReachDistance(), 0, FluidRayTraceMode.ALWAYS);
 		if (result != null && result.type == HitResult.Type.BLOCK) {
 			FluidState fluidState = client.world.getFluidState(result.getBlockPos());
 			if (fluidState.getFluid() != Fluids.EMPTY) {

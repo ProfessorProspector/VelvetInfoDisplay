@@ -1,12 +1,12 @@
-package prospector.velvetinfodisplay.gui;
+package io.github.prospector.velvetinfodisplay.gui;
 
 import com.mojang.blaze3d.platform.GlStateManager;
+import io.github.prospector.velvetinfodisplay.element.InfoElement;
 import net.minecraft.class_308;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.Drawable;
 import net.minecraft.client.render.item.ItemRenderer;
 import net.minecraft.item.ItemStack;
-import prospector.velvetinfodisplay.element.InfoElement;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,11 +1,11 @@
-package prospector.velvetinfodisplay.mixin;
+package io.github.prospector.velvetinfodisplay.mixin;
 
 import net.minecraft.client.gui.hud.InGameHud;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-import prospector.velvetinfodisplay.gui.VelvetHud;
+import io.github.prospector.velvetinfodisplay.gui.VelvetHud;
 
 @Mixin(InGameHud.class)
 public class InGameHudMixin {

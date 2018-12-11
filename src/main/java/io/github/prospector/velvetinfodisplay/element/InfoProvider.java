@@ -1,4 +1,4 @@
-package prospector.velvetinfodisplay.element;
+package io.github.prospector.velvetinfodisplay.element;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;

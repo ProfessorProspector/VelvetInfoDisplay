@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "prospector.velvetinfodisplay.mixin",
+  "package": "io.github.prospector.velvetinfodisplay.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
 	"InGameHudMixin"

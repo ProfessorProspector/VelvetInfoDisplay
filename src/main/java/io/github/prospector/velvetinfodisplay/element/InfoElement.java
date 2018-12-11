@@ -1,7 +1,7 @@
-package prospector.velvetinfodisplay.element;
+package io.github.prospector.velvetinfodisplay.element;
 
 import net.minecraft.client.MinecraftClient;
-import prospector.velvetinfodisplay.gui.VelvetHud;
+import io.github.prospector.velvetinfodisplay.gui.VelvetHud;
 
 public abstract class InfoElement {
 	public abstract int getWidth();

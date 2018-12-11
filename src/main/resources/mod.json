@@ -3,10 +3,9 @@
   "name": "Velvet Info Display",
   "version": "0.1.0",
   "side": "universal",
-  "initializer": "prospector.velvetinfodisplay.VelvetInfoDisplay",
+  "initializer": "io.github.prospector.velvetinfodisplay.VelvetInfoDisplay",
   "description": "Shows useful contextual info to the player on the HUD.",
   "mixins": {
-    "client": "velvetinfodisplay.client.json",
-    "common": "velvetinfodisplay.common.json"
+	"client": "mixins.velvetinfodisplay.client.json"
   }
 }

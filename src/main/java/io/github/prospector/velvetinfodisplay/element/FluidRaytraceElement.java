@@ -1,4 +1,4 @@
-package prospector.velvetinfodisplay.element;
+package io.github.prospector.velvetinfodisplay.element;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FluidBlock;
@@ -9,7 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.HitResult;
 import net.minecraft.world.FluidRayTraceMode;
-import prospector.velvetinfodisplay.gui.VelvetHud;
+import io.github.prospector.velvetinfodisplay.gui.VelvetHud;
 
 public class FluidRaytraceElement extends InfoElement {
 	public String name = "";

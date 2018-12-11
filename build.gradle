@@ -26,7 +26,7 @@ apply plugin: 'maven-publish'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-group = "prospector.velvetinfodisplay"
+group = "io.github.prospector.velvetinfodisplay"
 archivesBaseName = "VelvetInfoDisplay"
 version = "0.1.0"
 

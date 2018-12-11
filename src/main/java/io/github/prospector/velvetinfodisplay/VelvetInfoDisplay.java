@@ -1,9 +1,9 @@
-package prospector.velvetinfodisplay;
+package io.github.prospector.velvetinfodisplay;
 
 import net.fabricmc.api.ModInitializer;
-import prospector.velvetinfodisplay.element.BlockRaytraceElement;
-import prospector.velvetinfodisplay.element.FluidRaytraceElement;
-import prospector.velvetinfodisplay.gui.VelvetHud;
+import io.github.prospector.velvetinfodisplay.element.BlockRaytraceElement;
+import io.github.prospector.velvetinfodisplay.element.FluidRaytraceElement;
+import io.github.prospector.velvetinfodisplay.gui.VelvetHud;
 
 public class VelvetInfoDisplay implements ModInitializer {
 

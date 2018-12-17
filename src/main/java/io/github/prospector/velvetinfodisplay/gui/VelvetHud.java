@@ -2,9 +2,9 @@ package io.github.prospector.velvetinfodisplay.gui;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import io.github.prospector.velvetinfodisplay.element.InfoElement;
-import net.minecraft.class_308;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.Drawable;
+import net.minecraft.client.render.GuiLighting;
 import net.minecraft.client.render.item.ItemRenderer;
 import net.minecraft.item.ItemStack;
 
@@ -107,7 +107,7 @@ public class VelvetHud extends Drawable {
 			GlStateManager.pushMatrix();
 			GlStateManager.enableBlend();
 			GlStateManager.blendFunc(GlStateManager.SrcBlendFactor.SRC_ALPHA, GlStateManager.DstBlendFactor.ONE_MINUS_SRC_ALPHA);
-			class_308.method_1453();
+			GuiLighting.enableForItems();
 
 			ItemRenderer itemRenderer = MinecraftClient.getInstance().getItemRenderer();
 			itemRenderer.renderItemAndGlowInGui(stack, x, y);

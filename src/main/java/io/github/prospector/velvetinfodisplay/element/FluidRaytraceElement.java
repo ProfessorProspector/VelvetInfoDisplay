@@ -1,5 +1,6 @@
 package io.github.prospector.velvetinfodisplay.element;
 
+import io.github.prospector.velvetinfodisplay.gui.VelvetHud;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.FluidBlock;
 import net.minecraft.client.MinecraftClient;
@@ -9,7 +10,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.HitResult;
 import net.minecraft.world.FluidRayTraceMode;
-import io.github.prospector.velvetinfodisplay.gui.VelvetHud;
 
 public class FluidRaytraceElement extends InfoElement {
 	public String name = "";
@@ -59,6 +59,6 @@ public class FluidRaytraceElement extends InfoElement {
 	@Override
 	public void draw(int x, int y, VelvetHud hud) {
 		hud.renderItemStack(stack, x, y + (getHeight() / 2) - 8);
-		hud.client.fontRenderer.drawWithShadow(name, x + 20, y + (getHeight() / 2) - (hud.client.fontRenderer.FONT_HEIGHT / 2), 0xFFFFFFFF);
+		hud.client.fontRenderer.drawWithShadow(name, x + 20, y + (getHeight() / 2) - (hud.client.fontRenderer.fontHeight / 2), 0xFFFFFFFF);
 	}
 }

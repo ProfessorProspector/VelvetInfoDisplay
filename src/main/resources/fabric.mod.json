@@ -1,7 +1,7 @@
 {
   "id": "velvetinfodisplay",
   "name": "Velvet Info Display",
-  "version": "0.1.0",
+  "version": "$version",
   "side": "universal",
   "initializer": "io.github.prospector.velvetinfodisplay.VelvetInfoDisplay",
   "description": "Shows useful contextual info to the player on the HUD.",
